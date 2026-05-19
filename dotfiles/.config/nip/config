@@ -1,0 +1,3 @@
+BRANCH="nixpkgs/nixos-25.11"
+GC_ON_UPDATE_ALL=1
+WIPE_HISTORY=1

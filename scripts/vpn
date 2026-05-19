@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+CONN_NAME="420"
+
+IS_ACTIVE=$(nmcli -g NAME,TYPE connection show --active | grep -E "^${CONN_NAME}:wireguard$")
+
+if [ -n "$IS_ACTIVE" ]; then
+    echo "Disabled ${CONN_NAME}"
+    nmcli connection down id "${CONN_NAME}"
+else
+    echo "Enabled ${CONN_NAME}"
+    nmcli connection up id "${CONN_NAME}"
+fi

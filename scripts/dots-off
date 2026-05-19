@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+stow -Dd ~/tipi/dotfiles -t ~ .

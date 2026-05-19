@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+MOUNT_POINT="/mnt/samba-share"
+
+if mountpoint -q "$MOUNT_POINT"; then
+  echo "Unmounting..."
+  sudo umount "$MOUNT_POINT"
+else
+  echo "Mounting..."
+  sudo mkdir -p "$MOUNT_POINT"
+  read -p "username: " SMB_USER
+  sudo mount -t cifs //192.168.0.21/caden "$MOUNT_POINT" -o "uid=caden,user=${SMB_USER},domain=WORKGROUP"
+fi

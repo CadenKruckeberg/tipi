@@ -1,0 +1,22 @@
+[colors.primary]
+background = "#2e3440"
+
+[window]
+opacity = 0.6
+decorations = "None" # "Full" | "None" | "Transparent" | "Buttonless"
+blur = true
+
+[window.padding]
+x = 10
+y = 10
+
+[font]
+size = 16
+normal.family = "JetBrainsMono Nerd Font"
+normal.style  = "Regular"
+bold.family   = "JetBrainsMono Nerd Font"
+bold.style    = "Bold"
+italic.family = "JetBrainsMono Nerd Font"
+italic.style  = "Italic"
+bold_italic.family = "JetBrainsMono Nerd Font"
+bold_italic.style  = "Bold Italic"

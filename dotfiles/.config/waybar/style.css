@@ -1,0 +1,90 @@
+/* =========================
+   GLOBAL COLOR DEFINITIONS
+   ========================= */
+
+@define-color bg-color #000000;                 /* fully opaque black pill */
+@define-color fg-color rgba(255, 255, 255, 0.85);
+
+@define-color warning-color #ebcb8b;   /* Nord13 */
+@define-color critical-color #bf616a;  /* Nord11 */
+@define-color muted-color #d8dee9;     /* Nord4 */
+
+/* =========================
+   GLOBAL
+   ========================= */
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+/* =========================
+   MODULE BASE STYLE
+   ========================= */
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#tray {
+  background-color: @bg-color;
+  color: @fg-color;
+
+  padding: 5px 12px;
+  margin: 6px 4px;
+
+  border-radius: 999px; /* fully rounded pills */
+}
+
+/* =========================
+   CLOCK
+   ========================= */
+
+#clock {
+  font-weight: 500;
+}
+
+/* =========================
+   BATTERY STATES
+   ========================= */
+
+#battery.warning {
+  color: @warning-color;
+}
+
+#battery.critical {
+  color: @critical-color;
+}
+
+/* =========================
+   AUDIO
+   ========================= */
+
+#pulseaudio.muted {
+  color: @muted-color;
+}
+
+/* =========================
+   NETWORK STATES
+   ========================= */
+
+#network.disconnected {
+  color: @critical-color;
+}
+
+/* =========================
+   SYSTEM TRAY
+   ========================= */
+
+#tray {
+  padding: 5px 10px;
+}

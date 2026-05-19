@@ -1,0 +1,18 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 16
+
+background = #2e3440
+background-opacity = 0.6
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 10
+
+scrollback-limit = 1000 
+
+keybind = ctrl+shift+t=unbind
+keybind = ctrl+shift+w=unbind
+keybind = ctrl+shift+enter=unbind
+keybind = ctrl+shift+[=unbind
+keybind = ctrl+shift+]=unbind
+
+keybind = f11=toggle_fullscreen

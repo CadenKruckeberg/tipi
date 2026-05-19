@@ -1,0 +1,61 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+
+  "modules-left": [],
+
+  "modules-center": ["clock"],
+
+  "modules-right": [
+    "pulseaudio",
+    "battery",
+    "network",
+    "cpu",
+    "memory",
+    "tray"
+  ],
+
+  "clock": {
+    "format": "{:%a %e - %I:%M %p}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": ["", "", ""],
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pamixer -i 8 && paplay ~/tipi/sounds/volume.oga",
+    "on-scroll-down": "pamixer -d 8 && paplay ~/tipi/sounds/volume.oga"
+  },
+
+  "battery": {
+    "format": " {capacity}%",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    }
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤭",
+    "tooltip": true,
+    "tooltip-format-wifi": "{essid}",
+    "tooltip-format-ethernet": "{essid}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+
+  "cpu": {
+    "format": " {usage}%"
+  },
+
+  "memory": {
+    "format": "󰍛 {used:0.1f}G"
+  },
+
+  "tray": {
+    "spacing": 10
+  }
+}
