@@ -25,8 +25,8 @@
     "format-muted": "",
     "format-icons": ["", "", ""],
     "on-click": "pavucontrol",
-    "on-scroll-up": "pamixer -i 8 && paplay ~/tipi/sounds/volume.oga",
-    "on-scroll-down": "pamixer -d 8 && paplay ~/tipi/sounds/volume.oga"
+    "on-scroll-up": "pamixer -i 5 && paplay ~/tipi/sounds/volume.oga",
+    "on-scroll-down": "pamixer -d 5 && paplay ~/tipi/sounds/volume.oga"
   },
 
   "battery": {
