@@ -2,8 +2,8 @@
 
 # Default programs
 export EDITOR="nvim"
-# export TERM="alacritty"
-# export TERMINAL="alacritty"
+export TERM="alacritty"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 # XDG Base Directory Specification
