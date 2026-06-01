@@ -17,7 +17,11 @@ bindkey '^[[3;5~' kill-word
 # load modules
 zmodload zsh/complist
 fpath=("$HOME/.local/share/zsh/site-functions" $fpath)
-autoload -U compinit && compinit
+autoload -Uz compinit
+for dump in "${ZDOTDIR:-$HOME}/.zcompdump"(N.mh+24); do
+  compinit
+done
+compinit -C
 autoload -U colors && colors
 
 # cmp opts
