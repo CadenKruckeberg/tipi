@@ -69,8 +69,8 @@ titlebar_padding 1 1
 
 # --- Color Scheme (Active White / Inactive Black) ---
 # class           border  backgr. text    indicator child_border
-client.focused    #ffffff #ffffff #ffffff #ffffff   #ffffff
-client.unfocused  #000000 #000000 #000000 #000000   #000000
+client.focused    #88c0d0 #88c0d0 #88c0d0 #88c0d0   #88c0d0
+client.unfocused  #4c566a #4c566a #4c566a #4c566a   #4c566a
 
 output * bg ~/tipi/wallpapers/nord-dark/by_upload2_2560-nord-dark.png fill
 
