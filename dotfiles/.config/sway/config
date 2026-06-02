@@ -80,3 +80,5 @@ input "1133:49298:Logitech_G203_LIGHTSYNC_Gaming_Mouse" {
     accel_profile "flat"
     pointer_accel 0.0
   }
+
+include $(test -d /etc/sway/config.d && echo "/etc/sway/config.d/*" || true)
