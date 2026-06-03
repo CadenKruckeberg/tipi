@@ -13,5 +13,3 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias lv="NVIM_APPNAME=lazyvim nvim"
-
-alias clear="echo 🫵😹"
