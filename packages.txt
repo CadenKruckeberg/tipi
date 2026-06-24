@@ -1,8 +1,8 @@
 alacritty
 baobab
+btop
 burpsuite
 curl
-kdePackages.dolphin
 fastfetch
 ffmpeg-full
 file
@@ -14,7 +14,6 @@ gimp
 git
 glow
 gnumake
-htop
 hyprcursor
 hypridle
 hyprlock
@@ -26,9 +25,6 @@ inkscape
 jdk21
 nerd-fonts.jetbrains-mono
 jq
-kdePackages.kio
-kdePackages.kio-extras
-kdePackages.kio-fuse
 maven
 mint-artwork
 mitmproxy
@@ -36,11 +32,13 @@ neovim
 nmap
 pamixer
 pavucontrol
+positron-bin
 proton-vpn
 pulseaudio
 python3
 stow
 swayimg
+thunar
 tmux
 tree
 unzip
