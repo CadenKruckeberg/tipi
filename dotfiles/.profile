@@ -9,6 +9,7 @@ export BROWSER="firefox"
 # XDG Base Directory Specification
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_DATA_DIRS="$HOME/.nix-profile/share:$HOME/.local/share/nix-profile/share:/nix/var/nix/profiles/default/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
 export XDG_CACHE_HOME="${HOME}/.cache"
 
 # History files for tools
@@ -21,24 +22,24 @@ export FZF_CTRL_R_OPTS="--color 16 --info inline --no-sort --no-preview"
 
 # Source global aliases and vars if present
 [ -f "${XDG_CONFIG_HOME}/shell/alias" ] && . "${XDG_CONFIG_HOME}/shell/alias"
-[ -f "${XDG_CONFIG_HOME}/shell/vars" ]  && . "${XDG_CONFIG_HOME}/shell/vars"
+[ -f "${XDG_CONFIG_HOME}/shell/vars" ] && . "${XDG_CONFIG_HOME}/shell/vars"
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/bin" ]; then
+  PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$HOME/.local/bin:$PATH"
 fi
 
 # set PATH so it includes nix packages if they exist
-if [ -d "$HOME/.nix-profile/bin" ] ; then
-    PATH="$HOME/.nix-profile/bin:$PATH"
+if [ -d "$HOME/.nix-profile/bin" ]; then
+  PATH="$HOME/.nix-profile/bin:$PATH"
 fi
 
 # set PATH so it includes tipi scripts if they exist
-if [ -d "$HOME/tipi/scripts" ] ; then
-    PATH="$HOME/tipi/scripts:$PATH"
+if [ -d "$HOME/tipi/scripts" ]; then
+  PATH="$HOME/tipi/scripts:$PATH"
 fi
