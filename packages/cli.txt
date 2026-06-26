@@ -12,12 +12,14 @@ gnumake
 jq
 lua-language-server
 neovim
+networkmanager
 nmap
 pamixer
 python3
 stow
 tmux
 tree
+tree-sitter
 unzip
 vim
 wget
