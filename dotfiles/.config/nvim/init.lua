@@ -1,5 +1,9 @@
 require('vim._core.ui2').enable {}
 
+vim.pack.add({
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+})
+
 vim.g.mapleader = ' '
 
 vim.opt.tabstop = 2
@@ -45,4 +49,14 @@ vim.diagnostic.config({
   },
   signs = true,
   underline = true,
+})
+
+local treesitter_languages = { 'java', 'lua', 'markdown', 'python', 'make',
+  'bash', 'csv', 'tsv', 'json' }
+require('nvim-treesitter').install(treesitter_languages)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = treesitter_languages,
+  callback = function()
+    vim.treesitter.start()
+  end,
 })
