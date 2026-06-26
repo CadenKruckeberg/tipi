@@ -1,0 +1,4 @@
+jetbrains.idea
+jdk21
+jdt-language-server
+maven

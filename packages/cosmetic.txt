@@ -1,0 +1,3 @@
+nerd-fonts.jetbrains-mono
+mint-artwork
+vanilla-dmz
