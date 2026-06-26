@@ -72,7 +72,7 @@ titlebar_padding 1 1
 client.focused    #88c0d0 #88c0d0 #88c0d0 #88c0d0   #88c0d0
 client.unfocused  #4c566a #4c566a #4c566a #4c566a   #4c566a
 
-output * bg ~/wallpapers/nord.svg fill
+output * bg ~/wallpapers/nord.png fill
 
 seat seat0 xcursor_theme Vanilla-DMZ-AA 24
 
