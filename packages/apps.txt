@@ -1,11 +1,6 @@
 alacritty
 firefox
 fuzzel
-pavucontrol
 proton-vpn
-swayimg
-thunar
-vlc
 vscode
-zathura
 waybar
