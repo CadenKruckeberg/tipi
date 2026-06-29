@@ -72,7 +72,7 @@ titlebar_padding 1 1
 client.focused    #88c0d0 #88c0d0 #88c0d0 #88c0d0   #88c0d0
 client.unfocused  #4c566a #4c566a #4c566a #4c566a   #4c566a
 
-output * bg ~/wallpapers/nord.png fill
+# output * bg ~/wallpapers/nord.png fill
 
 seat seat0 xcursor_theme Vanilla-DMZ-AA 24
 
@@ -81,4 +81,10 @@ input "1133:49298:Logitech_G203_LIGHTSYNC_Gaming_Mouse" {
     pointer_accel 0.0
   }
 
-include $(test -d /etc/sway/config.d && echo "/etc/sway/config.d/*" || true)
+include "$(test -d /etc/sway/config.d && echo /etc/sway/config.d/* || true)"
+
+input "type:touchpad" {
+    natural_scroll enabled
+    scroll_factor 0.3
+    tap enabled
+ }
