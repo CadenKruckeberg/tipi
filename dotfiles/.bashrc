@@ -11,6 +11,7 @@ shopt -s checkwinsize
 
 # Use vi-style key bindings
 set -o vi
+bind '"\C-l":clear-screen'
 
 # Make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
