@@ -52,4 +52,4 @@ if command -v fzf &> /dev/null; then
 fi
 
 # set up prompt
-PROMPT=$'\n%F{#88c0d0}┏%B %F{#eceff4}%n%F{#d8dee9}%b@%B%F{#eceff4}%M %F{#88c0d0}%B%~%b \n┗━▶ %f'
+PROMPT=$'\n%F{#7c7f93}┏%B %F{#4c4f69}%n%b@%B%M %F{#7c7f93}%B%~%b \n%F{#7c7f93}┗━▶ %f'

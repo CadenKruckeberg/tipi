@@ -1,5 +1,7 @@
-[colors.primary]
-background = "#2e3440"
+[general]
+import = [
+    "~/.config/alacritty/catppuccin-latte.toml"
+]
 
 [window]
 opacity = 0.6
