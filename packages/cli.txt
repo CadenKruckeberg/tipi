@@ -1,4 +1,3 @@
-baobab
 btop
 curl
 fastfetch

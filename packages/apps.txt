@@ -1,4 +1,5 @@
 alacritty
+baobab
 firefox
 fuzzel
 proton-vpn
