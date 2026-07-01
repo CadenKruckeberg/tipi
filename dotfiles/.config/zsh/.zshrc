@@ -4,6 +4,20 @@
 
 # keybinds
 bindkey -v
+function set-cursor-by-mode() {
+  if [[ ${KEYMAP} == vicmd ]]; then
+    echo -ne '\e[2 q' # Block cursor for Normal mode
+  else
+    echo -ne '\e[6 q' # Beam cursor for Insert mode
+  fi
+}
+function zle-keymap-select() { set-cursor-by-mode }
+function zle-line-init() { set-cursor-by-mode }
+function zle-line-finish() { echo -ne '\e[6 q' } # Ensure next prompt line resets to beam
+zle -N zle-keymap-select
+zle -N zle-line-init
+zle -N zle-line-finish
+
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey '^H' backward-kill-word
@@ -53,22 +67,3 @@ fi
 
 # set up prompt
 PROMPT=$'\n%F{#7c7f93}┏%B %F{#4c4f69}%n%b@%B%M %F{#7c7f93}%B%~%b \n%F{#7c7f93}┗━▶ %f'
-
-# Consolidated Vi-Mode Cursor Controller
-function set-cursor-by-mode() {
-  if [[ ${KEYMAP} == vicmd ]]; then
-    echo -ne '\e[2 q' # Block cursor for Normal mode
-  else
-    echo -ne '\e[6 q' # Beam cursor for Insert mode
-  fi
-}
-
-# Attach the controller to all three Zsh Line Editor hooks
-function zle-keymap-select() { set-cursor-by-mode }
-function zle-line-init() { set-cursor-by-mode }
-function zle-line-finish() { echo -ne '\e[6 q' } # Ensure next prompt line resets to beam
-
-zle -N zle-keymap-select
-zle -N zle-line-init
-zle -N zle-line-finish
-
