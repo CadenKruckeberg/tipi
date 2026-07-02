@@ -43,3 +43,6 @@ fi
 if [ -d "$HOME/tipi/scripts" ]; then
   PATH="$HOME/tipi/scripts:$PATH"
 fi
+
+# Prepend Nix profile cursor paths to the existing environment
+export XCURSOR_PATH="${HOME}/.nix-profile/share/icons:${XCURSOR_PATH:-/usr/share/icons}"
