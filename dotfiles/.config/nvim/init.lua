@@ -5,6 +5,8 @@ vim.pack.add({
 })
 
 vim.g.mapleader = ' '
+vim.keymap.set({ 'n', 'v' }, '<Leader>y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<Leader>p', '"+p')
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
