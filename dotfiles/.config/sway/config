@@ -1,3 +1,6 @@
+# --- Services ---
+exec gtk-launch org.kde.polkit-kde-authentication-agent-1 # this works fine but it could look better
+
 # --- Variables ---
 set $mod Mod4
 set $terminal alacritty
