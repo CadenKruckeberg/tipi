@@ -1,5 +1,6 @@
 # --- Services ---
 exec gtk-launch org.kde.polkit-kde-authentication-agent-1 # this works fine but it could look better
+exec dunst
 
 # --- Variables ---
 set $mod Mod4
