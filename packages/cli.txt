@@ -23,5 +23,6 @@ unzip
 vim
 wget
 wireguard-tools
+wl-clipboard
 yt-dlp
 zip

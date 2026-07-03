@@ -10,7 +10,7 @@ bindsym $mod+space exec $menu
 bindsym $mod+q kill
 bindsym $mod+m exit
 bindsym $mod+e exec $fileManager
-bindsym Print exec hyprshot -m output --clipboard-only --freeze
+bindsym --release Print exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+g exec pkill waybar || waybar
 
 # --- Focus movement ---

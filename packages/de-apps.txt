@@ -1,4 +1,6 @@
+grim
 pavucontrol
+slurp
 swayimg
 thunar
 vlc
