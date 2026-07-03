@@ -1,1 +1,3 @@
-dotfiles/.config/zsh/.zcompdump
+/dotfiles/.config/zsh/.zcompdump
+/flake.lock
+/result
