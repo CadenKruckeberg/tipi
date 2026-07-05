@@ -25,9 +25,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Source global shell alias & variables files (same paths)
+# Source global shell alias & function files (same paths)
 [ -f "$XDG_CONFIG_HOME/shell/alias" ] && . "$XDG_CONFIG_HOME/shell/alias"
-[ -f "$XDG_CONFIG_HOME/shell/vars" ] && . "$XDG_CONFIG_HOME/shell/vars"
+[ -f "$XDG_CONFIG_HOME/shell/functions" ] && . "$XDG_CONFIG_HOME/shell/functions"
 
 # Readline completion preferences (zstyle analogs)
 bind "set show-all-if-ambiguous on"      # Tab lists matches immediately

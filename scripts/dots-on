@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 stow --no-folding -d ~/tipi/dotfiles/core -t ~ .
-~/tipi/scripts/theme light
+theme-switch light
