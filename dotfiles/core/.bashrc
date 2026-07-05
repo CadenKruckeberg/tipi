@@ -55,4 +55,7 @@ if command -v fzf &>/dev/null; then
 fi
 
 # ---------- Prompt ----------
-PS1='\n\[\e[38;2;124;127;147m\]┏\[\e[1;38;2;76;79;105m\] \u\e[0m@\[\e[1m\]\h \[\e[38;2;124;127;147m\]\[\e[1m\]\w\[\e[0m\] \n\[\e[38;2;124;127;147m\]┗━▶ \[\e[0m\]'
+source "${XDG_CONFIG_HOME}/bash/theme.sh"
+PS1="
+${PROMPT_SECONDARY_ESCAPE}┏ ${PROMPT_PRIMARY_ESCAPE}\u@\h ${PROMPT_SECONDARY_ESCAPE}\w
+${PROMPT_SECONDARY_ESCAPE}┗━▶ \[\e[0m\]"
