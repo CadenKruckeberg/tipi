@@ -27,6 +27,11 @@ vim.opt.background = 'light'
 vim.cmd.colorscheme 'catppuccin'
 vim.opt.winborder = 'rounded'
 
+dofile(vim.fn.stdpath("config") .. "/theme.lua") -- managed with stow
+vim.api.nvim_create_user_command("ThemeReload", function()
+  dofile(vim.fn.stdpath("config") .. "/theme.lua")
+end, {})
+
 vim.lsp.enable { 'lua_ls', 'jdtls', }
 
 vim.cmd('set completeopt+=noselect')
