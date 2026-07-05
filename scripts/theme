@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+THEME="$1"
+THEMES_DIR="$HOME/tipi/dotfiles/themes"
+
+cd "$THEMES_DIR"
+
+for theme in */; do
+    stow --no-folding -D -t ~ "${theme%/}" 2>/dev/null || true
+done
+
+stow --no-folding -t ~ "$THEME"
+
+swaymsg reload

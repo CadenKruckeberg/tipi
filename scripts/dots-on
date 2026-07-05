@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-stow -d ~/tipi/dotfiles -t ~ .
+stow --no-folding -d ~/tipi/dotfiles/core -t ~ .
+~/tipi/scripts/theme light

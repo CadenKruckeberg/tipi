@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-stow -Dd ~/tipi/dotfiles -t ~ .
+stow --no-folding -Dd ~/tipi/dotfiles/core -t ~ .
+
+cd ~/tipi/dotfiles/themes
+for theme in */; do
+    stow --no-folding -D -t ~ "${theme%/}" 2>/dev/null || true
+done

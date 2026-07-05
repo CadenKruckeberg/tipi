@@ -83,8 +83,7 @@ titlebar_padding 1 1
 client.focused    #40a02b #40a02b #40a02b #40a02b   #40a02b
 client.unfocused  #225517 #225517 #225517 #225517   #225517
 
-# output * bg ~/wallpapers/nord.png fill
-output * bg #eff1f5 solid_color
+include $XDG_CONFIG_HOME/sway/theme.conf
 
 seat seat0 xcursor_theme Vanilla-DMZ-AA 24
 
