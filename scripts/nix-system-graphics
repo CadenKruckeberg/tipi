@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cd ~/tipi
+sudo nix run 'github:numtide/system-manager' -- switch --flake '.'
