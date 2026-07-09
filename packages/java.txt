@@ -1,4 +1,4 @@
 jetbrains.idea
-jdk21
+jdk25
 jdt-language-server
 maven
