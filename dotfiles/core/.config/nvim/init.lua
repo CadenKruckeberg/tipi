@@ -2,6 +2,7 @@ require('vim._core.ui2').enable {}
 
 vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/jamessan/vim-gnupg"
 })
 
 vim.g.mapleader = ' '
@@ -73,3 +74,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function() vim.hl.on_yank() end,
 })
+
+vim.g.GPGPreferSymmetric = 1
+local gpg_group = vim.api.nvim_create_augroup("GpgSecurity", { clear = true })
+vim.api.nvim_create_autocmd({ "BufReadPre", "FileReadPre" }, {
+  pattern = { "*.gpg", "*.asc", "*.pgp" },
+  group = gpg_group,
+  callback = function()
+    vim.opt_local.swapfile = false
+    vim.opt_local.undofile = false
+    vim.opt_local.shada = ""
+  end,
+})
+vim.g.gpg_update_tty = 1
