@@ -1,4 +1,6 @@
-require('vim._core.ui2').enable {}
+if not vim.g.vscode then
+  require('vim._core.ui2').enable {}
+end
 
 vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
