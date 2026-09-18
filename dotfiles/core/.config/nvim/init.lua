@@ -26,7 +26,6 @@ vim.opt.colorcolumn = '80'
 vim.opt.signcolumn = 'yes'
 vim.opt.wrap = false
 
-vim.opt.background = 'light'
 vim.cmd.colorscheme 'catppuccin'
 vim.opt.winborder = 'rounded'
 
