@@ -34,7 +34,7 @@ vim.api.nvim_create_user_command("ThemeReload", function()
   dofile(vim.fn.stdpath("config") .. "/theme.lua")
 end, {})
 
-vim.lsp.enable { 'lua_ls', 'jdtls', }
+vim.lsp.enable { 'lua_ls', 'jdtls', 'pyright' }
 
 vim.cmd('set completeopt+=noselect')
 vim.api.nvim_create_autocmd('LspAttach', {
