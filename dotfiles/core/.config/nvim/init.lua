@@ -88,3 +88,60 @@ vim.api.nvim_create_autocmd({ "BufReadPre", "FileReadPre" }, {
   end,
 })
 vim.g.gpg_update_tty = 1
+
+
+-------------------
+---- TELESCOPE ----
+-------------------
+
+-- Install the filetype icons for telescope
+vim.pack.add({
+  { src = 'https://github.com/nvim-tree/nvim-web-devicons' }
+})
+
+-- Install telescope itself
+vim.pack.add({
+  { src = 'https://github.com/nvim-telescope/telescope.nvim' },
+  { src = 'https://github.com/nvim-lua/plenary.nvim' }
+})
+
+local telescope = require("telescope")
+local actions = require("telescope.actions")
+local map = vim.keymap.set
+
+telescope.setup({
+
+  defaults = {
+
+    -- Use sharp corners instead of rounded ones
+    borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+
+    -- Close telescope on escape, instead of entering normal mode
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close
+      }
+    },
+
+  },
+
+  -- Include hidden files, but not .git files
+  pickers = {
+    find_files = {
+      find_command = { "rg", "--ignore-case", "--files", "--hidden", "--glob", "!.git" },
+    },
+    live_grep = {
+      additional_args = function()
+        return { "--ignore-case", "--hidden", "--glob", "!.git" }
+      end
+    }
+  },
+
+})
+
+-- Telescope keymaps
+map('n', '<leader>ff', "<CMD>Telescope find_files<CR>", { desc = 'Telescope find files' })
+map('n', '<leader>fg', "<CMD>Telescope live_grep<CR>", { desc = 'Telescope live grep' })
+map('n', '<leader>fb', "<CMD>Telescope buffers<CR>", { desc = 'Telescope buffers' })
+map('n', '<leader>fh', "<CMD>Telescope help_tags<CR>", { desc = 'Telescope help tags' })
+
