@@ -3,8 +3,11 @@ if not vim.g.vscode then
 end
 
 vim.pack.add({
-  "https://github.com/nvim-treesitter/nvim-treesitter",
-  "https://github.com/jamessan/vim-gnupg"
+  'https://github.com/nvim-treesitter/nvim-treesitter',
+  'https://github.com/jamessan/vim-gnupg',
+  'https://github.com/nvim-telescope/telescope.nvim',
+  'https://github.com/nvim-lua/plenary.nvim',
+  'https://github.com/nvim-tree/nvim-web-devicons'
 })
 
 vim.g.mapleader = ' '
@@ -89,39 +92,21 @@ vim.api.nvim_create_autocmd({ "BufReadPre", "FileReadPre" }, {
 })
 vim.g.gpg_update_tty = 1
 
-vim.pack.add({
-  { src = 'https://github.com/nvim-telescope/telescope.nvim' },
-  { src = 'https://github.com/nvim-lua/plenary.nvim' }
-  { src = 'https://github.com/nvim-tree/nvim-web-devicons' }
-})
-
-local telescope = require("telescope")
-local actions = require("telescope.actions")
-local map = vim.keymap.set
+local telescope = require('telescope')
+local telescope_actions = require('telescope.actions')
 
 telescope.setup({
   defaults = {
-    borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
     mappings = {
       i = {
-        ["<esc>"] = actions.close
+        ["<esc>"] = telescope_actions.close
       }
     },
-  },
-
-  pickers = {
-    find_files = {
-      find_command = { "rg", "--ignore-case", "--files", "--hidden", "--glob", "!.git" },
-    },
-    live_grep = {
-      additional_args = function()
-        return { "--ignore-case", "--hidden", "--glob", "!.git" }
-      end
-    }
-  },
+  }
 })
 
-map('n', '<leader>ff', "<CMD>Telescope find_files<CR>", { desc = 'Telescope find files' })
-map('n', '<leader>fg', "<CMD>Telescope live_grep<CR>", { desc = 'Telescope live grep' })
-map('n', '<leader>fb', "<CMD>Telescope buffers<CR>", { desc = 'Telescope buffers' })
-map('n', '<leader>fh', "<CMD>Telescope help_tags<CR>", { desc = 'Telescope help tags' })
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
