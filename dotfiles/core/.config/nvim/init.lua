@@ -102,6 +102,11 @@ telescope.setup({
         ["<esc>"] = telescope_actions.close
       }
     },
+    file_ignore_patterns = {
+      "%.git/",
+      "%.venv/",
+      "venv/",
+    },
   }
 })
 
