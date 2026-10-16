@@ -1,3 +1,4 @@
 /dotfiles/.config/zsh/.zcompdump
 /flake.lock
 /result
+**/nvim-pack-lock.json
