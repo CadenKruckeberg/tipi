@@ -2,3 +2,20 @@
 
 stow --no-folding -d ~/tipi/dotfiles/core -t ~ .
 theme-switch light
+
+# --- Minecraft (Prism Launcher) Instance Bootstrap ---
+# Prism Launcher requires an `instance.cfg` file to recognize a folder as a valid instance.
+# We do NOT track `instance.cfg` in Git because Prism constantly modifies it with local
+# play-time stats, window geometry, and machine-specific Java paths.
+# Instead, if it doesn't exist yet (e.g., on a fresh install), generate a minimal stub
+# alongside our Stow-symlinked `mmc-pack.json` and `minecraft/config/` files.
+MC_INSTANCE_CFG="$HOME/.local/share/PrismLauncher/instances/26.3/instance.cfg"
+if [ ! -f "$MC_INSTANCE_CFG" ]; then
+    mkdir -p "$(dirname "$MC_INSTANCE_CFG")"
+    cat << 'EOF' > "$MC_INSTANCE_CFG"
+[General]
+ConfigVersion=1.3
+InstanceType=OneSix
+name=26.3
+EOF
+fi

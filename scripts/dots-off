@@ -6,3 +6,11 @@ cd ~/tipi/dotfiles/themes
 for theme in */; do
     stow --no-folding -D -t ~ "${theme%/}" 2>/dev/null || true
 done
+
+# --- Minecraft (Prism Launcher) Instance Cleanup ---
+# Because `instance.cfg` was generated locally (not tracked in Git or managed by Stow),
+# `stow -D` will not remove it, leaving behind an empty/broken instance folder in Prism.
+# Delete the untracked `instance.cfg` and prune any leftover empty directories.
+MC_INSTANCE_DIR="$HOME/.local/share/PrismLauncher/instances/26.3"
+rm -f "$MC_INSTANCE_DIR/instance.cfg"
+rmdir -p "$MC_INSTANCE_DIR/minecraft/config" "$MC_INSTANCE_DIR" 2>/dev/null || true
