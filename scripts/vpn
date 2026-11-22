@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONN_NAME="420"
+CONN_NAME="home"
 
 IS_ACTIVE=$(nmcli -g NAME,TYPE connection show --active | grep -E "^${CONN_NAME}:wireguard$")
 
